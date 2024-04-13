@@ -1,0 +1,26 @@
+Sections:
+1. Introduction
+2. Method
+3. Errors encountered
+4. Solution to errors
+5. Resources
+
+3. Errors encountered
+	1. Python incompatibility with transformers library
+	2. accelerate library incompatibility with transformers library
+	3. Jupyter notebook giving off an error "No module named _sqlite3"
+	4. make test - failed
+	5. Error loading the fine-tuned falcon-7b model
+	6. main file:
+		OSError: /home/cv/FYP_Chatbot/test02/src/myenv-test002-02/lib/python3.9/site-packages/torch/lib/../../nvidia/cublas/lib/libcublas.so.11: symbol cublasLtGetStatusString version libcublasLt.so.11 not defined in file libcublasLt.so.11 with link time reference
+4. Solution to errors
+	3. Install the following package thats missing: "sudo apt-get 
+install libsqlite3-dev".
+	Rebuild python using the following commands:
+		"./configure --enable-optimizations"
+		"make"
+		"sudo make install"
+	Install pysqlite3.
+	Run the following command "sudo cp /home/cv/.local/lib/python3.9/site-packages/pysqlite3/_sqlite3.cpython-39-x86_64-linux-gnu.so /usr/local/lib/python3.9/lib-dynload/" 
+	4. ran with sudo
+	6. 
